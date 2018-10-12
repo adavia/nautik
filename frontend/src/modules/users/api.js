@@ -1,12 +1,12 @@
 import client from '../../config/client';
 
 class User {
-  fetch() {
-    return client.get('/users');   
+  fetch(url) {
+    return client.get(url);   
   }
 
-  create(values) {
-    return client.post('/users', values);   
+  create(url, values) {
+    return client.post(url, values);   
   }
 }
 

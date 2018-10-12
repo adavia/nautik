@@ -16,7 +16,6 @@ const CategoryList = ({ categories }) => {
 
 const Container = styled(Flex)({
   flexWrap: 'wrap',
-  flexDirection: 'row',
   marginTop: 7
 })
  

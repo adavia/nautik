@@ -22,7 +22,7 @@ export function fetchBoats() {
   return async (dispatch) => {
     dispatch(boatResponse(FETCH_BOATS_REQUEST));    
     try {
-      const response = await boatAPI.fetch();
+      const response = await boatAPI.fetch('/boats');
       dispatch(boatResponse(FETCH_BOATS_SUCCESS, response.data));
     } catch ({ response }) {
       dispatch(boatResponse(FETCH_BOATS_FAILURE, response.data.error));
@@ -34,7 +34,7 @@ export function selectBoat(id) {
   return async (dispatch) => {
     dispatch(boatResponse(SELECT_BOAT_REQUEST));    
     try {
-      const response = await boatAPI.show(id);
+      const response = await boatAPI.show(`/boats/${id}`);
       dispatch(boatResponse(SELECT_BOAT_SUCCESS, response.data));
     } catch ({ response }) {
       dispatch(boatResponse(SELECT_BOAT_FAILURE, response.data.error));
@@ -53,7 +53,7 @@ export function createBoat(values) {
   return async (dispatch) => {
     dispatch(boatResponse(CREATE_BOAT_REQUEST));  
     try {
-      const response = await boatAPI.create(values);
+      const response = await boatAPI.create('/boats', values);
       dispatch(boatResponse(CREATE_BOAT_SUCCESS, response.data));
       return response;
     } catch ({ response }) {
@@ -67,7 +67,7 @@ export function updateBoat(id, values) {
   return async (dispatch) => {
     dispatch(boatResponse(UPDATE_BOAT_REQUEST));    
     try {
-      const response = await boatAPI.update(id, values);
+      const response = await boatAPI.update(`/boats/${id}`, values);
       dispatch(boatResponse(UPDATE_BOAT_SUCCESS, response.data));
     } catch ({ response }) {
       dispatch(boatResponse(UPDATE_BOAT_FAILURE, response.data.error));

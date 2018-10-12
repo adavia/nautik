@@ -1,8 +1,8 @@
 import client from '../../config/client';
 
 class Category {
-  fetch() {
-    return client.get('/categories');   
+  fetch(url) {
+    return client.get(url);   
   }
 }
 

@@ -1,20 +1,20 @@
 import client from '../../config/client';
 
 class Boat {
-  fetch() {
-    return client.get('/boats');   
+  fetch(url) {
+    return client.get(url);   
   }
 
-  show(id) {
-    return client.get(`/boats/${id}`);   
+  show(url) {
+    return client.get(url);   
   }
 
-  create(values) {
-    return client.post('/boats', values);   
+  create(url, values) {
+    return client.post(url, values);   
   }
 
-  update(id, values) {
-    return client.put(`/boats/${id}`, values);   
+  update(url, values) {
+    return client.put(url, values);   
   }
 }
 

@@ -18,6 +18,7 @@ app.use(cors({
   origin: config.app.clientURL
 }));
 
+app.use(express.static('src/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

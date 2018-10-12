@@ -3,6 +3,7 @@ import config from '../config';
 import User from './users.model';
 import Boat from './boats.model';
 import Category from './categories.model';
+import Attachment from './attachments.model';
 
 mongoose.connect(`mongodb://${config.db.host}/${config.db.name}`, { 
   useNewUrlParser: true 
@@ -17,6 +18,7 @@ export default { mongoose,
 	models: {
 		User,
 		Boat,
-		Category
+		Category,
+		Attachment
 	}
 };

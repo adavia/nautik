@@ -74,10 +74,7 @@ const Container = styled('div')(props =>
       borderColor: props.error && "tomato"
     },
     'input[type=number]': {
-      minHeight: '45px',
-      width: '30%',
       fontFamily: props.theme.fonts.Dosis,
-      fontSize: '1.3em',
       fontWeight: 700
     },
     'input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button': { 

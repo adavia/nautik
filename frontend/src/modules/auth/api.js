@@ -1,16 +1,16 @@
 import client from '../../config/client';
 
 class Auth {
-  authenticate() {
-    return client.get('/auth/me');   
+  authenticate(url) {
+    return client.get(url);   
   }
 
-  login(values) {
-    return client.post('/auth/login', values);   
+  login(url, values) {
+    return client.post(url, values);   
   }
 
-  logout() {
-    return client.delete('/auth/logout');   
+  logout(url) {
+    return client.delete(url);   
   }
 }
 

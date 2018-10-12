@@ -14,10 +14,10 @@ class ModalBase extends Component {
     }));
   }
 
-  onClickAway = (e) => {
-    if (this.modal && this.modal.contains(e.target)) return;
-    this.onToggleModal();
-  };
+  // onClickAway = (e) => {
+  //   if (this.modal && this.modal.contains(e.target)) return;
+  //   this.onToggleModal();
+  // };
 
   render () {
     const { ariaLabel, children, element } = this.props;
@@ -34,7 +34,6 @@ class ModalBase extends Component {
             header={ariaLabel}
             modalRef={node => (this.modal = node)}
             content={children}
-            onClickAway={this.onClickAway}
             onToggle={this.onToggleModal}
           />
         }

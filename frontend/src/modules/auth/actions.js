@@ -9,7 +9,7 @@ export function authenticate() {
   return async (dispatch) => {
     dispatch(authResponse(AUTH_REQUEST));    
     try {
-      const response = await authAPI.authenticate();
+      const response = await authAPI.authenticate('/auth/me');
       dispatch(authResponse(AUTH_SUCCESS, response.data));
       return response;
     } catch ({ response }) {
@@ -23,7 +23,7 @@ export function login(values) {
   return async (dispatch) => {
     dispatch(authResponse(AUTH_REQUEST));    
     try {
-      const response = await authAPI.login(values);
+      const response = await authAPI.login('/auth/login');
       dispatch(authResponse(AUTH_SUCCESS, response.data));
       return response;
     } catch ({ response }) {
@@ -36,7 +36,7 @@ export function login(values) {
 export function logout() {                                  
   return async (dispatch) => {    
     try {
-      const response = await authAPI.logout();
+      const response = await authAPI.logout('/auth/logout');
       dispatch(authResponse(LOGOUT_SUCCESS));
       return response;
     } catch ({ response }) {

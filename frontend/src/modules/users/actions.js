@@ -8,7 +8,7 @@ export function createUser(values) {
   return async (dispatch) => {
     dispatch(userResponse(CREATE_USER_REQUEST));  
     try {
-      const response = await userAPI.create(values);
+      const response = await userAPI.create('/users', values);
       dispatch(userResponse(CREATE_USER_SUCCESS, response.data));
       return response;
     } catch ({ response }) {

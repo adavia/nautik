@@ -8,7 +8,7 @@ export function fetchCategories() {
   return async (dispatch) => {
     dispatch(categoryResponse(FETCH_CATEGORIES_REQUEST));    
     try {
-      const response = await categoryAPI.fetch();
+      const response = await categoryAPI.fetch('/categories');
       dispatch(categoryResponse(FETCH_CATEGORIES_SUCCESS, response.data));
     } catch ({ response }) {
       dispatch(categoryResponse(FETCH_CATEGORIES_FAILURE, response.data.error));

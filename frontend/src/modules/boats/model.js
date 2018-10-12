@@ -31,5 +31,6 @@ Boat.fields = {
   name: attr(),
   description: attr(),
   pricing: attr(),
-  categories: many('Category', 'categories')
+  categories: many('Category', 'boat'),
+  attachments: many('Attachment', 'boat')
 }

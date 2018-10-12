@@ -10,7 +10,7 @@ const ModalContent = ({
   onClickAway
 }) => {
   return ReactDOM.createPortal(
-    <Overlay onClick={onClickAway}>
+    <Overlay>
       <Modal innerRef={modalRef}>
         <Button type="button" onClick={onToggle} />
         <Header>{header}</Header>
